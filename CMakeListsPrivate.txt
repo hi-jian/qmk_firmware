@@ -1,0 +1,50 @@
+include_directories("${CMAKE_CURRENT_LIST_DIR}/platforms")
+include_directories("${CMAKE_CURRENT_LIST_DIR}/platforms/arm_atsam")
+include_directories("${CMAKE_CURRENT_LIST_DIR}/platforms/arm_atsam/bootloaders")
+include_directories("${CMAKE_CURRENT_LIST_DIR}/platforms/avr")
+include_directories("${CMAKE_CURRENT_LIST_DIR}/platforms/avr/bootloaders")
+include_directories("${CMAKE_CURRENT_LIST_DIR}/platforms/avr/drivers")
+include_directories("${CMAKE_CURRENT_LIST_DIR}/platforms/avr/drivers/ps2")
+
+include_directories("${CMAKE_CURRENT_LIST_DIR}/drivers")
+include_directories("${CMAKE_CURRENT_LIST_DIR}/drivers/flash")
+include_directories("${CMAKE_CURRENT_LIST_DIR}/drivers/gpio")
+include_directories("${CMAKE_CURRENT_LIST_DIR}/drivers/haptic")
+include_directories("${CMAKE_CURRENT_LIST_DIR}/drivers/lcd")
+include_directories("${CMAKE_CURRENT_LIST_DIR}/drivers/led")
+include_directories("${CMAKE_CURRENT_LIST_DIR}/drivers/oled")
+include_directories("${CMAKE_CURRENT_LIST_DIR}/drivers/painter")
+include_directories("${CMAKE_CURRENT_LIST_DIR}/drivers/ps2")
+include_directories("${CMAKE_CURRENT_LIST_DIR}/drivers/sensors")
+include_directories("${CMAKE_CURRENT_LIST_DIR}/drivers/wear_leveling")
+
+include_directories("${CMAKE_CURRENT_LIST_DIR}/quantum")
+include_directories("${CMAKE_CURRENT_LIST_DIR}/quantum/audio")
+include_directories("${CMAKE_CURRENT_LIST_DIR}/quantum/backlight")
+include_directories("${CMAKE_CURRENT_LIST_DIR}/quantum/bootmagic")
+include_directories("${CMAKE_CURRENT_LIST_DIR}/quantum/debounce")
+include_directories("${CMAKE_CURRENT_LIST_DIR}/quantum/encoder")
+include_directories("${CMAKE_CURRENT_LIST_DIR}/quantum/keymap_extras")
+include_directories("${CMAKE_CURRENT_LIST_DIR}/quantum/led_matrix")
+include_directories("${CMAKE_CURRENT_LIST_DIR}/quantum/logging")
+include_directories("${CMAKE_CURRENT_LIST_DIR}/quantum/painter")
+include_directories("${CMAKE_CURRENT_LIST_DIR}/quantum/pointing_device")
+include_directories("${CMAKE_CURRENT_LIST_DIR}/quantum/process_keycode")
+include_directories("${CMAKE_CURRENT_LIST_DIR}/quantum/rgb_matrix")
+include_directories("${CMAKE_CURRENT_LIST_DIR}/quantum/rgblight")
+include_directories("${CMAKE_CURRENT_LIST_DIR}/quantum/send_string")
+include_directories("${CMAKE_CURRENT_LIST_DIR}/quantum/sequencer")
+include_directories("${CMAKE_CURRENT_LIST_DIR}/quantum/split_common")
+include_directories("${CMAKE_CURRENT_LIST_DIR}/quantum/wear_leveling")
+include_directories("${CMAKE_CURRENT_LIST_DIR}/users/0hiwang")
+
+
+
+FILE(GLOB_RECURSE SRC_LIST
+    ${CMAKE_CURRENT_LIST_DIR}/keyboards/0_h_i_wang/*.*
+    ${CMAKE_CURRENT_LIST_DIR}/quantum/*.*
+    ${CMAKE_CURRENT_LIST_DIR}/drivers/*.*
+    ${CMAKE_CURRENT_LIST_DIR}/users/0hiwang/*.*
+)
+
+list(APPEND SRC_LIST ${EXTRA_LIB_SOURCES})

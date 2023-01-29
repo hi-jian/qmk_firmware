@@ -4,7 +4,7 @@
   "url": "https://binepad.com",
   "maintainer": "binepad",
   "usb": {
-    "vid": "0x4249",
+    "vid": "0x6582",
     "pid": "0x4287",
     "device_version": "0.0.1"
   },

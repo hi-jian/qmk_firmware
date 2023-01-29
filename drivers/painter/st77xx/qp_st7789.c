@@ -52,10 +52,22 @@ bool qp_st7789_init(painter_device_t device, painter_rotation_t rotation) {
     // clang-format off
     const uint8_t st7789_init_sequence[] = {
         // Command,                 Delay, N, Data[N]
-        ST77XX_CMD_RESET,            120,  0,
-        ST77XX_CMD_SLEEP_OFF,          5,  0,
+//        ST77XX_CMD_RESET,            120,  0,
+//        ST77XX_CMD_SLEEP_OFF,          5,  0,
         ST77XX_SET_PIX_FMT,            0,  1, 0x55,
+        0xB2,                          0,  5, 0x0C, 0x0C, 0x00, 0x33, 0x33,
+        0XB7,                          0,  1, 0x35,
+        0xBB,                          0,  1, 0x19,
+        0xC0,                          0,  1, 0x2C,
+        0xC2,                          0,  1, 0x01,
+        0xC3,                          0,  1, 0x12,
+        0xC4,                          0,  1, 0x20,
+        0xC6,                          0,  1, 0x0F,
+        0xD0,                          0,  2, 0xA4, 0xA1,
+        0xE0,                          0, 14, 0xD0, 0x04, 0x0D, 0x11, 0x13, 0x2B, 0x3F, 0x54, 0x4C, 0x18, 0x0D, 0x0B, 0x1F, 0x23,
+        0xE1,                          0, 14, 0xD0, 0x04, 0x0C, 0x11, 0x13, 0x2C, 0x3F, 0x44, 0x51, 0x2F, 0x1F, 0x1F, 0x20, 0x23,
         ST77XX_CMD_INVERT_ON,          0,  0,
+        ST77XX_CMD_SLEEP_OFF,          0,  0,
         ST77XX_CMD_NORMAL_ON,          0,  0,
         ST77XX_CMD_DISPLAY_ON,        20,  0
     };

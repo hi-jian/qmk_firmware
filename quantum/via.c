@@ -615,6 +615,6 @@ void via_qmk_rgb_matrix_set_value(uint8_t *data) {
             rgb_matrix_sethsv_noeeprom(value_data[0], value_data[1], rgb_matrix_get_val());
             break;
     }
-}
+                    }
 
 #endif // #if defined(VIA_QMK_RGB_MATRIX_ENABLE)
